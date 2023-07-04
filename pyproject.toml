@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iformat"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Finn Emmerson", email="finne014@gmail.com" },
 ]
