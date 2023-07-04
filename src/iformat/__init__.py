@@ -34,7 +34,7 @@ def _brackets(datatype, newline = False, indentAmount = 0):
 def _indent(indentLevel, indentDepth):
     return " " * (indentLevel * indentDepth)
 
-def iformat(i, indentLevel = 0, indentDepth = 4, expansionThreshold = 10):
+def iformat(i, indentLevel = 0, indentDepth = 4, expansionThreshold = 0):
     il, id, et = indentLevel, indentDepth, expansionThreshold
     length = _length(i)
     if type(i) in _iters:
@@ -53,5 +53,5 @@ def iformat(i, indentLevel = 0, indentDepth = 4, expansionThreshold = 10):
         else:
             return str(i)
 
-def iprint(*args, indentDepth = 4, expansionThreshold = 10, sep = " ", end = "\n", file = None, flush = False):
+def iprint(*args, indentDepth = 4, expansionThreshold = 0, sep = " ", end = "\n", file = None, flush = False):
     print(*[iformat(x, 0, indentDepth, expansionThreshold = expansionThreshold) for x in args], sep = sep, end = end, file = file, flush = flush)
