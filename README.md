@@ -7,13 +7,13 @@ iformat is a simple package that prints basic data structures in an indented and
 Specifies how many spaces should be inserted as one indent level. Default `4`.
 
 **`expansionThreshold`**: *(`iprint` and `iformat`)*\
-Specifies how long an object must be when printed before it is shown in a muilti-line format. Default `10`.\
+Specifies how long an object must be when printed before it is shown in a muilti-line format. Default `0`.\
 Ex:
 ```py
 iprint([1, 2, 3], expansionThreshold = 10)
 # [1, 2, 3]
 
-iprint([1, 2, 3], expansionThreshold = 8)
+iprint([1, 2, 3], expansionThreshold = 0)
 # [
 #   1,
 #   2,
@@ -23,3 +23,6 @@ iprint([1, 2, 3], expansionThreshold = 8)
 
 **`indentLevel`:** *(`iformat` only)*\
 Specifies the indent level of the returned output string. Default `0`.
+
+https://github.com/FinnE145/iprint
+https://pypi.org/project/iformat
