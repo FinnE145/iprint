@@ -1,21 +1,46 @@
-"""
-Copyright (C) 2023  Finn Emmerson
+""" # iformat
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+iformat is a simple package that prints basic data structures in an indented and readable way. The main `iprint` function supports changing the indent size and expansion threshold, as well as all vanilla `print` arguments. The included `iformat` function provides more customization, and returns a string that has been indented and formatted. An `.iformat` method (returning a string) can be added to any class for that class to be printed with custom formatting.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
+## Parameters:
+**`indentDepth`:** *(`iprint` and `iformat`)*\
+Specifies how many spaces should be inserted as one indent level. Default `4`.
 
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+**`expansionThreshold`**: *(`iprint` and `iformat`)*\
+Specifies how long an object must be when printed before it is shown in a muilti-line format. Default `10`.\
+Ex:
+```py
+iprint([1, 2, 3], expansionThreshold = 10)
+# [1, 2, 3]
 
-finne014@gmail.com
-"""
+iprint([1, 2, 3], expansionThreshold = 8)
+# [
+#   1,
+#   2,
+#   3
+# ]
+```
+
+**`indentLevel`:** *(`iformat` only)*\
+Specifies the indent level of the returned output string. Default `0`. """
+
+
+# Copyright (C) 2023  Finn Emmerson
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# finne014@gmail.com
 
 # ----------- iPrint ---------- #
 _iters = [dict, list, tuple, set]        # NOTE: 'dict' must be first, because it has special cases
