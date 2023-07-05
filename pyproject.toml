@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iformat"
-version = "0.1.1"
+version = "0.3.1"
 authors = [
   { name="Finn Emmerson", email="finne014@gmail.com" },
 ]
-description = "Provides a function that indents and pretty prints data structures"
+description = "Indents and pretty prints data structures"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
