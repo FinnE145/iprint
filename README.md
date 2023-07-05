@@ -25,11 +25,10 @@ iprint([1, 2, 3], expansionThreshold = 0)
 Specifies class attributes that should not be printed. Should be a list or tuple of strings OR a regex pattern. Default `r"__.+__"`
 
 ## `.iformat` method for classes:
-You can add a `.iformat` method to any class to show the return value of that method instead of the default iformat output for classes. It must accept positional arguments `indentLevel`, `indentDepth`, `expansionThreshold`, and `excludedAttrs`, which will be passed the same values as those passed to the `iformat` function call that calls the method. It is reccomended that you add whitespace in front of the output corresponding to `indentLevel * indentDepth`, and that you call `iformat`, with the same passed args (maybe with indentDepth + 1) on any values that are part of the outputted string.
+You can add a `.iformat` method to any class to show the return value of that method instead of the default iformat output for classes. It must accept positional arguments `indentLevel`, `indentDepth`, `expansionThreshold`, and `excludedAttrs`, which will be passed the same values as those passed to the `iformat` function call that calls the method. It is reccomended that you add whitespace in front of the output corresponding to `indentLevel * indentDepth`, and that you call `iformat`, with the same passed args (maybe with `indentDepth + 1`) on any values that are part of the outputted string.
 
 **`indentLevel`:** *(`iformat` only)*\
 Specifies the indent level of the returned output string. Default `0`.
 
-https://github.com/FinnE145/iprint
-
+https://github.com/FinnE145/iprint\
 https://pypi.org/project/iformat
