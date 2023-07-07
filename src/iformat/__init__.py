@@ -43,12 +43,12 @@ def iformat(i, indentLevel = 0, indentDepth = 4, expansionThreshold = 0, exclude
     il, id, et, ea = indentLevel, indentDepth, expansionThreshold, excludedAttrs
     length = _length(i)
     if type(i) in _iters:
-        return (_brackets(type(i), True if length > et else False, ((il + 1) * id) if length > et else False)[0]\
-            + ((",\n" + _indent(il + 1, id)) if length > et else (", ")).join(\
+        return (_brackets(type(i), True if length > et and len(i) > 0 else False, ((il + 1) * id) if length > et and len(i) > 0 else False)[0]\
+            + ((",\n" + _indent(il + 1, id)) if length > et and len(i) > 0 else (", ")).join(\
                     [f"{iformat(k, il + 1, id, et, ea)}: {iformat(v, il + 1, id, et, ea)}" for k, v in i.items()]\
                 if type(i) == dict else\
                     [iformat(x, il + 1, id, et, ea) for x in i])\
-            + _brackets(type(i), True if length > et else False, (il * id) if length > et else 0)[-1])
+            + _brackets(type(i), True if length > et and len(i) > 0 else False, (il * id) if length > et else 0)[-1])
     if _isfunctionish(i):
         return f"<function {i.__name__}>"
     if "iformat" in dir(i):
