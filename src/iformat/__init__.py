@@ -22,7 +22,6 @@ https://pypi.org/project/iformat"""
 
 # finne014@gmail.com
 
-# ----------- iPrint ---------- #
 from inspect import isfunction as _if, isbuiltin as _ib, ismethod as _im
 from re import match as _match
 _iters = [dict, list, tuple, set]        # NOTE: 'dict' must be first, because it has special cases. Other allowed iterable types can be added after item 0. They will by default have no brackets accociated with them, but will otherwise be treated as iterables
